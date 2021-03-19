@@ -123,6 +123,35 @@
         }
       }
     },
+    "/search/user" : {
+      "get" : {
+        "summary" : "Get the autocomplete list of user based on key word",
+        "parameters" : [ {
+          "name" : "q",
+          "in" : "query",
+          "description" : "keyword",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "array",
+                  "items" : { }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/document/view-history" : {
       "get" : {
         "summary" : "Get the history logs of a document date wise",
@@ -169,14 +198,7 @@
         "responses" : {
           "200" : {
             "description" : "OK",
-            "content" : {
-              "application/json" : {
-                "schema" : {
-                  "type" : "array",
-                  "items" : { }
-                }
-              }
-            }
+            "content" : { }
           }
         }
       }
